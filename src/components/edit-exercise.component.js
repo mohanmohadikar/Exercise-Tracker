@@ -93,8 +93,23 @@ export default class EditExercise extends Component {
   }
 
   render() {
+    const divStyle = {
+      color: "white",
+      backgroundColor: "#333A41",
+      borderRadius: "10px",
+      padding: "25px",
+      fontFamily: "Cursive",
+      width: "fit-content",
+      display: "block",
+      margin: "auto"
+    };
+    const btnStyle = {
+      color: "white",
+      display: "block",
+      margin: "auto"
+    };
     return (
-    <div>
+    <div style={divStyle}>
       <h3>Edit Exercise Log</h3>
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
@@ -143,7 +158,7 @@ export default class EditExercise extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Edit Exercise Log" className="btn btn-primary" />
+          <input type="submit" value="Edit Exercise Log" className="btn btn-primary" style={btnStyle}/>
         </div>
       </form>
     </div>

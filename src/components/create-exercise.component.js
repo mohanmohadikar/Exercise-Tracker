@@ -16,7 +16,7 @@ export default class CreateExercise extends Component {
     this.state = {
       username: '',
       description: '',
-      duration: 0,
+      duration: undefined,
       date: new Date(),
       users: []
     }
@@ -81,12 +81,27 @@ export default class CreateExercise extends Component {
   }
 
   render() {
+    const divStyle = {
+      color: "white",
+      backgroundColor: "#333A41",
+      borderRadius: "10px",
+      padding: "25px",
+      fontFamily: "Cursive",
+      width: "fit-content",
+      display: "block",
+      margin: "auto"
+    };
+    const btnStyle = {
+      color: "white",
+      display: "block",
+      margin: "auto"
+    };
     return (
-    <div>
-      <h3>Create New Exercise Log</h3>
+    <div style={divStyle}>
+      <h3>Create new exercise log</h3>
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
-          <label>Username: </label>
+          <label>Select an username</label>
           <select ref="userInput"
               required
               className="form-control"
@@ -107,6 +122,7 @@ export default class CreateExercise extends Component {
           <input  type="text"
               required
               className="form-control"
+              placeholder = "description..."
               value={this.state.description}
               onChange={this.onChangeDescription}
               />
@@ -116,6 +132,7 @@ export default class CreateExercise extends Component {
           <input 
               type="text" 
               className="form-control"
+              placeholder="duration (in minutes)"
               value={this.state.duration}
               onChange={this.onChangeDuration}
               />
@@ -131,7 +148,7 @@ export default class CreateExercise extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Create Exercise Log" className="btn btn-primary" />
+          <input type="submit" value="submit log" className="btn btn-primary" style={btnStyle}/>
         </div>
       </form>
     </div>

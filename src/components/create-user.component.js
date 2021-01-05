@@ -37,21 +37,38 @@ export default class CreateUser extends Component {
   }
 
   render() {
+    const divStyle = {
+        color: "white",
+        backgroundColor: "#333A41",
+        borderRadius: "10px",
+        padding: "25px",
+        fontFamily: "Cursive",
+        width: "fit-content",
+        display: "block",
+        margin: "auto"
+      };
+      const btnStyle = {
+        color: "white",
+        display: "block",
+        margin: "auto"
+      };
     return (
-      <div>
-        <h3>Create New User</h3>
+      <div style={divStyle}>
+        <h3 style={{textAlign: "center"}}>Create new user</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
-            <label>Username: </label>
+            <label></label>
             <input  type="text"
                 required
                 className="form-control"
                 value={this.state.username}
                 onChange={this.onChangeUsername}
+                placeholder="Enter an unique username"
+                style={{minWidth: "300px", margin: "auto"}}
                 />
           </div>
           <div className="form-group">
-            <input type="submit" value="Create User" className="btn btn-primary" />
+            <input type="submit" value="create user" className="btn btn-primary" style={btnStyle}/>
           </div>
         </form>
       </div>
